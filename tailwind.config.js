@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#1E40AF', // Deep blue
+          DEFAULT: '#0F2B5E', // Dark blue
           foreground: '#FFFFFF',
         },
         secondary: {
@@ -17,7 +17,7 @@ module.exports = {
           foreground: '#FFFFFF',
         },
         accent: {
-          DEFAULT: '#10B981', // Emerald
+          DEFAULT: '#FF6B35', // Warm orange
           foreground: '#FFFFFF',
         },
         background: '#F0F9FF', // Very light blue
@@ -26,8 +26,8 @@ module.exports = {
           foreground: '#475569',
         },
         button: {
-          primary: '#2563EB', // Royal blue
-          secondary: '#60A5FA', // Sky blue
+          primary: '#0F2B5E', // Dark blue
+          secondary: '#FF6B35', // Warm orange
           text: '#FFFFFF',
         },
       },

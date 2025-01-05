@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de21eef1-86fb-450d-aea7-08162b318306" name="Changes" comment="" />
+    <list default="true" id="de21eef1-86fb-450d-aea7-08162b318306" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +19,7 @@
         <option value="TypeScript File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -27,6 +30,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2phN1maAPFVrNwk0OIxg6Q6V5TQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -64,7 +70,7 @@
       <updated>1733214134988</updated>
       <workItem from="1733214135820" duration="826000" />
       <workItem from="1734789238243" duration="7951000" />
-      <workItem from="1736032389753" duration="5380000" />
+      <workItem from="1736032389753" duration="5988000" />
     </task>
     <servers />
   </component>
