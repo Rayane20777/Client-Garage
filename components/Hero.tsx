@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Clock, MapPin, Phone } from 'lucide-react'
+import ContactDialog from './ContactDialog'
 
 export default function Hero() {
     return (
@@ -14,7 +15,6 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 mix-blend-multiply"></div>
             </div>
 
-
             {/* Main content */}
             <div className="relative z-10 max-w-3xl mx-auto px-4 text-center mt-24">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -23,19 +23,14 @@ export default function Hero() {
                 <p className="text-lg md:text-xl mb-8 text-white/90">
                     Plus de 20 ans d'expertise technique et de service professionnel pour l'entretien de votre véhicule
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link
-                        href="/tarifs"
-                        className="bg-button-primary hover:bg-button-primary/90 text-button-text font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
-                    >
-                        Voir nos tarifs
-                    </Link>
-                    <Link
-                        href="#contact"
-                        className="bg-button-secondary hover:bg-button-secondary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
-                    >
-                        Nous contacter
-                    </Link>
+                <div className="flex justify-center">
+                    <ContactDialog>
+                        <button
+                            className="bg-button-secondary hover:bg-button-secondary/90 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+                        >
+                            Nous contacter
+                        </button>
+                    </ContactDialog>
                 </div>
             </div>
 

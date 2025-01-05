@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className="scroll-smooth">
+      <html lang="fr" className="scroll-smooth">
       <body className={`${inter.className} font-sans text-gray-800`}>{children}</body>
-    </html>
+      </html>
   )
 }
 

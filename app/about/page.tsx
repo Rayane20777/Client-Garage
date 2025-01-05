@@ -2,6 +2,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 import { Users, History, Target, Award, Wrench } from 'lucide-react'
+import ContactDialog from '@/components/ContactDialog'
+import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
     return (
@@ -93,13 +95,12 @@ export default function AboutPage() {
                     <div className="container mx-auto px-4 text-center">
                         <h2 className="text-3xl font-bold mb-4">Prêt à nous confier votre véhicule ?</h2>
                         <p className="text-xl mb-8">Prenez rendez-vous dès aujourd'hui et découvrez la différence de notre service.</p>
-                        <a
-                            href="/contact"
-                            className="bg-accent hover:bg-accent/90 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-flex items-center"
-                        >
-                            <Wrench className="mr-2" />
-                            Prendre Rendez-vous
-                        </a>
+                        <ContactDialog>
+                            <Button className="bg-accent hover:bg-accent/90 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 inline-flex items-center">
+                                <Wrench className="mr-2" />
+                                Prendre Rendez-vous
+                            </Button>
+                        </ContactDialog>
                     </div>
                 </section>
             </main>
