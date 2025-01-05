@@ -101,14 +101,14 @@ export default function Services() {
                     Nos Services d'Entretien
                 </h1>
                 <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                    Découvrez nos différentes formules d'entretien adaptées à vos besoins. 
+                    Découvrez nos différentes formules d'entretien adaptées à vos besoins.
                     Nos experts sont à votre disposition pour maintenir votre véhicule en parfait état.
                 </p>
-                
+
                 <div className="relative max-w-4xl mx-auto">
                     {services.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage).map((service, index) => (
-                        <div 
-                            key={index} 
+                        <div
+                            key={index}
                             className="bg-gradient-to-br from-primary to-secondary rounded-2xl overflow-hidden shadow-2xl p-8 text-white"
                             style={{
                                 backgroundImage: `linear-gradient(to bottom right, rgba(30, 64, 175, 0.95), rgba(59, 130, 246, 0.95)), url('${service.image}')`,
@@ -139,7 +139,7 @@ export default function Services() {
                             </div>
                         </div>
                     ))}
-                    
+
                     <div className="flex justify-center items-center mt-8 gap-4">
                         <button
                             onClick={handlePrev}
@@ -271,83 +271,83 @@ export default function Services() {
                 </p>
             </div>
 
-                {/* Additional Information Section */}
-                <div className="mt-24 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    <div className="bg-white p-8 rounded-xl shadow-lg">
-                        <h3 className="text-2xl font-bold text-primary mb-6">Informations Importantes</h3>
-                        <ul className="space-y-4">
-                            <li className="flex items-start gap-3">
-                                <Check className="w-5 h-5 text-emerald-500 mt-1" />
-                                <div>
-                                    <p className="font-medium text-gray-900">Garantie Constructeur Préservée</p>
-                                    <p className="text-gray-600">Nos interventions respectent le carnet d'entretien constructeur</p>
-                                </div>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <Check className="w-5 h-5 text-emerald-500 mt-1" />
-                                <div>
-                                    <p className="font-medium text-gray-900">Pièces d'Origine</p>
-                                    <p className="text-gray-600">Utilisation exclusive de pièces de première monte ou de qualité équivalente</p>
-                                </div>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <Check className="w-5 h-5 text-emerald-500 mt-1" />
-                                <div>
-                                    <p className="font-medium text-gray-900">Devis Gratuit</p>
-                                    <p className="text-gray-600">Estimation détaillée avant toute intervention</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="bg-white p-8 rounded-xl shadow-lg">
-                        <h3 className="text-2xl font-bold text-primary mb-6">Services Complémentaires</h3>
-                        <ul className="space-y-4">
-                            <li className="flex items-start gap-3">
-                                <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded">+39,95€</span>
-                                <div>
-                                    <p className="font-medium text-gray-900">Remplacement Filtre à Air</p>
-                                    <p className="text-gray-600">Améliore les performances et la consommation</p>
-                                </div>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded">+39,95€</span>
-                                <div>
-                                    <p className="font-medium text-gray-900">Remplacement Filtre Habitacle</p>
-                                    <p className="text-gray-600">Pour un air plus sain dans l'habitacle</p>
-                                </div>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded">+29,95€</span>
-                                <div>
-                                    <p className="font-medium text-gray-900">Diagnostic Électronique</p>
-                                    <p className="text-gray-600">Lecture et analyse des codes défaut</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+            {/* Additional Information Section */}
+            <div className="mt-24 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div className="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 className="text-2xl font-bold text-primary mb-6">Informations Importantes</h3>
+                    <ul className="space-y-4">
+                        <li className="flex items-start gap-3">
+                            <Check className="w-5 h-5 text-emerald-500 mt-1" />
+                            <div>
+                                <p className="font-medium text-gray-900">Garantie Constructeur Préservée</p>
+                                <p className="text-gray-600">Nos interventions respectent le carnet d'entretien constructeur</p>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <Check className="w-5 h-5 text-emerald-500 mt-1" />
+                            <div>
+                                <p className="font-medium text-gray-900">Pièces d'Origine</p>
+                                <p className="text-gray-600">Utilisation exclusive de pièces de première monte ou de qualité équivalente</p>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <Check className="w-5 h-5 text-emerald-500 mt-1" />
+                            <div>
+                                <p className="font-medium text-gray-900">Devis Gratuit</p>
+                                <p className="text-gray-600">Estimation détaillée avant toute intervention</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
-                {/* FAQ Section */}
-                <div className="mt-24 max-w-3xl mx-auto">
-                    <h3 className="text-2xl font-bold text-primary text-center mb-8">Questions Fréquentes</h3>
-                    <div className="space-y-6">
-                        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                            <h4 className="font-bold text-lg mb-2 text-primary">Combien de temps dure une révision ?</h4>
-                            <p className="text-gray-600">La durée moyenne d'une révision est de 2 à 3 heures, selon le type de révision et le modèle du véhicule.</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                            <h4 className="font-bold text-lg mb-2 text-primary">Puis-je attendre pendant l'intervention ?</h4>
-                            <p className="text-gray-600">Oui, notre espace d'attente est équipé de WiFi gratuit et de boissons chaudes.</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                            <h4 className="font-bold text-lg mb-2 text-primary">Les pièces sont-elles garanties ?</h4>
-                            <p className="text-gray-600">Oui, toutes nos pièces et main d'œuvre sont garanties 12 mois.</p>
-                        </div>
+                <div className="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 className="text-2xl font-bold text-primary mb-6">Services Complémentaires</h3>
+                    <ul className="space-y-4">
+                        <li className="flex items-start gap-3">
+                            <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded">+39,95€</span>
+                            <div>
+                                <p className="font-medium text-gray-900">Remplacement Filtre à Air</p>
+                                <p className="text-gray-600">Améliore les performances et la consommation</p>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded">+39,95€</span>
+                            <div>
+                                <p className="font-medium text-gray-900">Remplacement Filtre Habitacle</p>
+                                <p className="text-gray-600">Pour un air plus sain dans l'habitacle</p>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded">+29,95€</span>
+                            <div>
+                                <p className="font-medium text-gray-900">Diagnostic Électronique</p>
+                                <p className="text-gray-600">Lecture et analyse des codes défaut</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* FAQ Section */}
+            <div className="mt-24 max-w-3xl mx-auto">
+                <h3 className="text-2xl font-bold text-primary text-center mb-8">Questions Fréquentes</h3>
+                <div className="space-y-6">
+                    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <h4 className="font-bold text-lg mb-2 text-primary">Combien de temps dure une révision ?</h4>
+                        <p className="text-gray-600">La durée moyenne d'une révision est de 2 à 3 heures, selon le type de révision et le modèle du véhicule.</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <h4 className="font-bold text-lg mb-2 text-primary">Puis-je attendre pendant l'intervention ?</h4>
+                        <p className="text-gray-600">Oui, notre espace d'attente est équipé de WiFi gratuit et de boissons chaudes.</p>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <h4 className="font-bold text-lg mb-2 text-primary">Les pièces sont-elles garanties ?</h4>
+                        <p className="text-gray-600">Oui, toutes nos pièces et main d'œuvre sont garanties 12 mois.</p>
                     </div>
                 </div>
             </div>
-        </section>
-    );
+        </div>
+</section>
+);
 }
 
