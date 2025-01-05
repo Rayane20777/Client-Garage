@@ -72,8 +72,7 @@ const services = [
 
 export default function Services() {
     const [currentPage, setCurrentPage] = useState(0);
-    const cardsPerPage = 1;
-    const totalPages = Math.ceil(services.length / cardsPerPage);
+    const totalPages = services.length;
 
     const getFeatureIcon = (status: string) => {
         switch(status) {
@@ -105,39 +104,66 @@ export default function Services() {
                     Nos experts sont à votre disposition pour maintenir votre véhicule en parfait état.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div className="mb-16 relative">
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                            className={`bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 max-w-4xl mx-auto ${
+                                index === currentPage ? 'block' : 'hidden'
+                            }`}
                         >
-                            <div className="relative h-48">
+                            <div className="relative h-[600px]">
                                 <img
                                     src={service.image}
                                     alt={service.name}
                                     className="object-cover w-full h-full"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
-                                <div className="absolute bottom-4 left-4 text-white">
-                                    <h3 className="text-xl font-bold">{service.name}</h3>
-                                    <p className="text-lg font-semibold">{service.price}</p>
+                                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+                                <div className="absolute inset-0 flex flex-col justify-between p-8">
+                                    <div className="text-white">
+                                        <h3 className="text-4xl font-bold mb-2">{service.name}</h3>
+                                        <p className="text-3xl font-semibold mb-4">{service.price}</p>
+                                        <p className="text-xl mb-2">{service.description}</p>
+                                        <p className="text-sm">{service.note}</p>
+                                    </div>
+                                    <div className="bg-white/90 p-6 rounded-lg">
+                                        <ul className="grid grid-cols-2 gap-4">
+                                            {service.features.map((feature, featureIndex) => (
+                                                <li key={featureIndex} className="flex items-center gap-2">
+                                                    {getFeatureIcon(feature.status)}
+                                                    <span className="text-sm text-gray-800">{feature.text}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <button className="mt-6 w-full bg-primary text-white px-4 py-3 rounded-lg hover:bg-primary/90 transition-colors text-lg font-semibold">
+                                            Prendre rendez-vous
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="p-6">
-                                <ul className="space-y-2">
-                                    {service.features.map((feature, featureIndex) => (
-                                        <li key={featureIndex} className="flex items-center gap-2">
-                                            {getFeatureIcon(feature.status)}
-                                            <span className="text-sm text-gray-600">{feature.text}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <button className="mt-4 w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
-                                    Prendre rendez-vous
+                                <button
+                                    onClick={handlePrev}
+                                    disabled={currentPage === 0}
+                                    className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 text-primary p-2 rounded-full hover:bg-white transition-colors disabled:opacity-50"
+                                    aria-label="Service précédent"
+                                >
+                                    <ChevronLeft className="w-8 h-8" />
+                                </button>
+                                <button
+                                    onClick={handleNext}
+                                    disabled={currentPage === totalPages - 1}
+                                    className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 text-primary p-2 rounded-full hover:bg-white transition-colors disabled:opacity-50"
+                                    aria-label="Service suivant"
+                                >
+                                    <ChevronRight className="w-8 h-8" />
                                 </button>
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className="text-center mt-4">
+                    <span className="text-lg font-medium">
+                        {currentPage + 1} / {totalPages}
+                    </span>
                 </div>
 
                 {/* Services Comparison Table */}
@@ -215,7 +241,14 @@ export default function Services() {
                                     vidange: { price: "19,95 €" },
                                     simple: { price: "19,95 €" }
                                 }
-                            ].map((row, index) => (
+                            ].map((row: {
+                                name: string;
+                                all?: boolean;
+                                eco?: boolean | string;
+                                revision?: boolean | string;
+                                vidange?: { price: string } | string;
+                                simple?: { price: string } | string;
+                            }, index) => (
                                 <div key={index} className="grid grid-cols-5 gap-4 px-6 py-3">
                                     <div className="font-medium">{row.name}</div>
                                     {['eco', 'revision', 'vidange', 'simple'].map((col) => (
@@ -323,8 +356,7 @@ export default function Services() {
                     </div>
                 </div>
             </div>
-        </div>
-</section>
-);
+        </section>
+    );
 }
 
