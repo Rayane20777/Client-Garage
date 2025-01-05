@@ -87,50 +87,6 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* Our Team Section */}
-                <section className="py-16 bg-white">
-                    <div className="container mx-auto px-4">
-                        <h2 className="text-3xl font-bold text-primary text-center mb-12">Notre Équipe</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                                <Image
-                                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-12-25%20%C3%A0%2021.54.01_e19f1d97.jpg-w1TlzOOGj7ZXNXzZcbgY2HgPapU3Lw.jpeg"
-                                    alt="Jean Dupont"
-                                    width={200}
-                                    height={200}
-                                    className="rounded-full mx-auto mb-4"
-                                />
-                                <h3 className="text-xl font-semibold mb-2">Jean Dupont</h3>
-                                <p className="text-gray-600 mb-2">Fondateur & Maître Mécanicien</p>
-                                <p className="text-sm text-gray-500">Plus de 30 ans d'expérience dans l'industrie automobile</p>
-                            </div>
-                            <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                                <Image
-                                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-12-25%20%C3%A0%2021.54.02_cbc51502.jpg-HRHczlwTq8pelnf8sVxWr4w6tZo48S.jpeg"
-                                    alt="Marie Martin"
-                                    width={200}
-                                    height={200}
-                                    className="rounded-full mx-auto mb-4"
-                                />
-                                <h3 className="text-xl font-semibold mb-2">Marie Martin</h3>
-                                <p className="text-gray-600 mb-2">Responsable Service Client</p>
-                                <p className="text-sm text-gray-500">Dévouée à offrir une expérience client exceptionnelle</p>
-                            </div>
-                            <div className="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                                <Image
-                                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-12-25%20%C3%A0%2021.54.02_5ad9bee9.jpg-L2yCiDapcpmDAaM3OvwiVqJmwwn3P8.jpeg"
-                                    alt="Pierre Leroy"
-                                    width={200}
-                                    height={200}
-                                    className="rounded-full mx-auto mb-4"
-                                />
-                                <h3 className="text-xl font-semibold mb-2">Pierre Leroy</h3>
-                                <p className="text-gray-600 mb-2">Chef Mécanicien</p>
-                                <p className="text-sm text-gray-500">Spécialiste en diagnostic électronique et réparations complexes</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
                 {/* Call to Action Section */}
                 <section className="py-16 bg-primary text-white">

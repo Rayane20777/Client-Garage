@@ -169,10 +169,6 @@ export default function Services() {
                 {/* Services Comparison Table */}
                 <div className="bg-white rounded-xl shadow-lg overflow-x-auto mt-16">
                     <div className="min-w-[1000px]">
-                        {/* Promotion Banner */}
-                        <div className="bg-accent/10 text-accent font-medium text-center py-2">
-                            -20% sur l'entretien climatisation* pour l'achat d'une révision
-                        </div>
 
                         {/* Table Header */}
                         <div className="grid grid-cols-5 gap-4 px-6 py-4 border-b">

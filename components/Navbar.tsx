@@ -4,7 +4,9 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Clock, MapPin, Phone } from 'lucide-react'
+import { Menu, X, Clock, MapPin, Phone, Mail, MessageCircle } from 'lucide-react'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -28,15 +30,15 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
                     <div className="flex items-center gap-2 hover:text-accent transition-colors">
                         <Clock className="w-4 h-4" />
-                        <span className="font-medium">Lun-Ven: 8h30-19h00</span>
+                        <span className="font-medium">Lun-Sam: 8h30-19h00</span>
                     </div>
-                    <a href="tel:0123456789" className="flex items-center gap-2 hover:text-accent transition-colors">
+                    <a href="tel:0670058094" className="flex items-center gap-2 hover:text-accent transition-colors">
                         <Phone className="w-4 h-4" />
-                        <span className="font-medium">01 23 45 67 89</span>
+                        <span className="font-medium">06 70 05 80 94</span>
                     </a>
-                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
+                    <a href="https://maps.app.goo.gl/YaQzuqdLMH3mEk6f8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
                         <MapPin className="w-4 h-4" />
-                        <span className="font-medium">123 Rue de l'Auto, 75000 Paris</span>
+                        <span className="font-medium">42 Chemin de Gérocourt, 95650 Boissy-L'Aillerie</span>
                     </a>
                 </div>
             </div>
@@ -96,7 +98,43 @@ export default function Navbar() {
                             À Propos
                         </Link>
                     </li>
-
+                    <li>
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                <button className="text-primary font-bold transition-all duration-300 hover:text-accent">
+                                    Nous Contacter
+                                </button>
+                            </DialogTrigger>
+                            <DialogContent className="sm:max-w-[425px]">
+                                <DialogHeader>
+                                    <DialogTitle>Choisissez votre méthode de contact</DialogTitle>
+                                </DialogHeader>
+                                <div className="grid gap-4 py-4">
+                                    <Button
+                                        onClick={() => window.location.href = 'mailto:garagemaautoservices@outlook.com'}
+                                        className="flex items-center justify-center gap-2"
+                                    >
+                                        <Mail className="w-4 h-4" />
+                                        Email
+                                    </Button>
+                                    <Button
+                                        onClick={() => window.open('https://wa.me/33670058094', '_blank')}
+                                        className="flex items-center justify-center gap-2"
+                                    >
+                                        <MessageCircle className="w-4 h-4" />
+                                        WhatsApp
+                                    </Button>
+                                    <Button
+                                        onClick={() => window.location.href = 'tel:0670058094'}
+                                        className="flex items-center justify-center gap-2"
+                                    >
+                                        <Phone className="w-4 h-4" />
+                                        Appel Téléphonique
+                                    </Button>
+                                </div>
+                            </DialogContent>
+                        </Dialog>
+                    </li>
                 </ul>
 
                 <button
