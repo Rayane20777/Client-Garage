@@ -165,6 +165,112 @@ export default function Services() {
                     </div>
                 </div>
 
+                {/* Services Comparison Table */}
+                <div className="bg-white rounded-xl shadow-lg overflow-x-auto mt-16">
+                    {/* Promotion Banner */}
+                    <div className="bg-accent/10 text-accent font-medium text-center py-2">
+                        -20% sur l'entretien climatisation* pour l'achat d'une révision
+                    </div>
+
+                    {/* Table Header */}
+                    <div className="grid grid-cols-5 gap-4 px-6 py-4 border-b">
+                        <div className="bg-blue-50 rounded-lg p-4">
+                            <h3 className="font-medium text-primary mb-2">Pourquoi choisir la révision ÉcoContrôle ?</h3>
+                            <p className="text-sm text-gray-600">
+                                Anticipez votre prochain contrôle technique en assurant l'encrassement de votre moteur et en identifiant les éléments défaillants pour éviter des réparations coûteuses.
+                            </p>
+                        </div>
+                        {['RÉVISION ECO CONTRÔLE', 'RÉVISION', 'ENTRETIEN VIDANGE', 'VIDANGE SIMPLE'].map((service, index) => (
+                            <div key={index} className="text-center flex flex-col justify-between h-full">
+                                <div>
+                                    <div className="font-bold text-primary mb-1">{service}</div>
+                                    {index <= 1 && (
+                                        <div className="text-sm text-gray-500 mb-2">GARANTIE CONSTRUCTEUR PRÉSERVÉE*</div>
+                                    )}
+                                    {index === 0 && (
+                                        <div className="text-sm text-gray-500 mb-2">DIAGNOSTIC ANTI-POLLUTION INCLUS*</div>
+                                    )}
+                                    <div className="font-bold text-xl mt-2">à partir de</div>
+                                    <div className="text-3xl font-bold text-primary">
+                                        {index === 0 ? '104 €' : index === 1 ? '91 €' : index === 2 ? '79,95 €' : '69,95 €'}
+                                    </div>
+                                    <div className="text-xs text-gray-500">Prix variable en fonction du véhicule*</div>
+                                </div>
+                                <button className="mt-4 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors w-full">
+                                    Prendre rendez-vous
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Table Body */}
+                    <div className="divide-y">
+                        {[
+                            { name: "Vidange huile moteur", all: true },
+                            { name: "Remplacement du filtre à huile", all: true },
+                            {
+                                name: "Remplacement des filtres à air, habitacle et carburant",
+                                eco: true,
+                                revision: true,
+                                vidange: { price: "39,95 €" },
+                                simple: { price: "39,95 €" }
+                            },
+                            {
+                                name: "Points de contrôle",
+                                eco: "jusqu'à 40 points de contrôle",
+                                revision: "jusqu'à 40 points de contrôle",
+                                vidange: "12 points de contrôles",
+                                simple: "3 points de contrôle"
+                            },
+                            {
+                                name: "Mise à niveau des liquides",
+                                eco: true,
+                                revision: true,
+                                vidange: "AdBlue® en option",
+                                simple: { price: "14,95 €" }
+                            },
+                            { name: "Pression des pneus", all: true },
+                            { name: "Remise à zéro des indicateurs de maintenance", all: true },
+                            { name: "Permutation des roues AV/AR sur les véhicules 4 roues motrices", all: true },
+                            {
+                                name: "Diagnostic électronique moteur (pour véhicules après 2000)",
+                                eco: true,
+                                revision: true,
+                                vidange: { price: "19,95 €" },
+                                simple: { price: "19,95 €" }
+                            }
+                        ].map((row, index) => (
+                            <div key={index} className="grid grid-cols-5 gap-4 px-6 py-3">
+                                <div className="font-medium">{row.name}</div>
+                                {['eco', 'revision', 'vidange', 'simple'].map((col) => (
+                                    <div key={col} className="text-center">
+                                        {row.all ? (
+                                            <Check className="w-5 h-5 text-accent mx-auto" />
+                                        ) : row[col] === true ? (
+                                            <Check className="w-5 h-5 text-accent mx-auto" />
+                                        ) : row[col]?.price ? (
+                                            <div className="text-sm">
+                                  <span className="text-xs px-2 py-1 bg-blue-100 text-blue-800 rounded">
+                                    +{row[col].price}
+                                  </span>
+                                            </div>
+                                        ) : typeof row[col] === 'string' ? (
+                                            <div className="text-sm text-gray-600">{row[col]}</div>
+                                        ) : (
+                                            <Circle className="w-5 h-5 text-gray-300 mx-auto" />
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <p className="text-sm text-muted-foreground text-center mt-6">
+                    * Prix variables en fonction du véhicule. Voir conditions en atelier.
+                </p>
+            </div>
+
                 {/* Additional Information Section */}
                 <div className="mt-24 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     <div className="bg-white p-8 rounded-xl shadow-lg">
