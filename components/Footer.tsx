@@ -1,4 +1,5 @@
 import ContactDialog from './ContactDialog'
+import { Facebook } from 'lucide-react'
 
 export default function Footer() {
     return (
@@ -28,7 +29,14 @@ export default function Footer() {
                     <div>
                         <h4 className="text-xl font-bold mb-4">Suivez-nous</h4>
                         <div className="flex space-x-4">
-                            <a href="#" className="text-white hover:text-accent transition-colors"><i className="fab fa-facebook text-2xl"></i></a>
+                            <a
+                                href="https://www.facebook.com/share/18ZX4XLKHC/?mibextid=wwXIfr"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white hover:text-accent transition-colors"
+                            >
+                                <Facebook className="w-6 h-6" />
+                            </a>
                         </div>
                     </div>
                 </div>
