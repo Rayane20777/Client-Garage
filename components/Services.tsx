@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, Circle } from 'lucide-react'
+import { Check, Circle, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const services = [
     {
@@ -105,164 +105,141 @@ export default function Services() {
                     Nos experts sont à votre disposition pour maintenir votre véhicule en parfait état.
                 </p>
 
-                <div className="relative max-w-4xl mx-auto">
-                    {services.slice(currentPage * cardsPerPage, (currentPage + 1) * cardsPerPage).map((service, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    {services.map((service, index) => (
                         <div
                             key={index}
-                            className="bg-gradient-to-br from-primary to-secondary rounded-2xl overflow-hidden shadow-2xl p-8 text-white"
-                            style={{
-                                backgroundImage: `linear-gradient(to bottom right, rgba(30, 64, 175, 0.95), rgba(59, 130, 246, 0.95)), url('${service.image}')`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                                backgroundBlendMode: 'overlay'
-                            }}
+                            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                         >
-                            <div className="flex flex-col">
-                                <div className="mb-8">
-                                    <h2 className="text-3xl font-bold mb-6">{service.name}</h2>
-                                    <div className="flex flex-col">
-                                        <span className="text-5xl font-bold mb-1">{service.price}</span>
-                                        <span className="text-blue-100">{service.description}</span>
-                                        <span className="text-blue-100 text-sm">{service.note}</span>
-                                    </div>
+                            <div className="relative h-48">
+                                <img
+                                    src={service.image}
+                                    alt={service.name}
+                                    className="object-cover w-full h-full"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                                <div className="absolute bottom-4 left-4 text-white">
+                                    <h3 className="text-xl font-bold">{service.name}</h3>
+                                    <p className="text-lg font-semibold">{service.price}</p>
                                 </div>
-
-                                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                            </div>
+                            <div className="p-6">
+                                <ul className="space-y-2">
                                     {service.features.map((feature, featureIndex) => (
-                                        <div key={featureIndex} className="flex items-center gap-3">
+                                        <li key={featureIndex} className="flex items-center gap-2">
                                             {getFeatureIcon(feature.status)}
-                                            <span className="text-blue-50">{feature.text}</span>
-                                        </div>
+                                            <span className="text-sm text-gray-600">{feature.text}</span>
+                                        </li>
                                     ))}
-                                </div>
-
+                                </ul>
+                                <button className="mt-4 w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+                                    Prendre rendez-vous
+                                </button>
                             </div>
                         </div>
                     ))}
-
-                    <div className="flex justify-center items-center mt-8 gap-4">
-                        <button
-                            onClick={handlePrev}
-                            disabled={currentPage === 0}
-                            className="w-10 h-10 flex items-center justify-center rounded-full 
-                                bg-primary/10 text-primary hover:bg-primary/20 disabled:opacity-50 
-                                disabled:cursor-not-allowed transition-all duration-300"
-                        >
-                            ←
-                        </button>
-                        <span className="text-primary font-medium">
-                            {currentPage + 1} / {totalPages}
-                        </span>
-                        <button
-                            onClick={handleNext}
-                            disabled={currentPage === totalPages - 1}
-                            className="w-10 h-10 flex items-center justify-center rounded-full 
-                                bg-primary/10 text-primary hover:bg-primary/20 disabled:opacity-50 
-                                disabled:cursor-not-allowed transition-all duration-300"
-                        >
-                            →
-                        </button>
-                    </div>
                 </div>
 
                 {/* Services Comparison Table */}
                 <div className="bg-white rounded-xl shadow-lg overflow-x-auto mt-16">
-                    {/* Promotion Banner */}
-                    <div className="bg-accent/10 text-accent font-medium text-center py-2">
-                        -20% sur l'entretien climatisation* pour l'achat d'une révision
-                    </div>
-
-                    {/* Table Header */}
-                    <div className="grid grid-cols-5 gap-4 px-6 py-4 border-b">
-                        <div className="bg-blue-50 rounded-lg p-4">
-                            <h3 className="font-medium text-primary mb-2">Pourquoi choisir la révision ÉcoContrôle ?</h3>
-                            <p className="text-sm text-gray-600">
-                                Anticipez votre prochain contrôle technique en assurant l'encrassement de votre moteur et en identifiant les éléments défaillants pour éviter des réparations coûteuses.
-                            </p>
+                    <div className="min-w-[1000px]">
+                        {/* Promotion Banner */}
+                        <div className="bg-accent/10 text-accent font-medium text-center py-2">
+                            -20% sur l'entretien climatisation* pour l'achat d'une révision
                         </div>
-                        {['RÉVISION ECO CONTRÔLE', 'RÉVISION', 'ENTRETIEN VIDANGE', 'VIDANGE SIMPLE'].map((service, index) => (
-                            <div key={index} className="text-center flex flex-col justify-between h-full">
-                                <div>
-                                    <div className="font-bold text-primary mb-1">{service}</div>
-                                    {index <= 1 && (
-                                        <div className="text-sm text-gray-500 mb-2">GARANTIE CONSTRUCTEUR PRÉSERVÉE*</div>
-                                    )}
-                                    {index === 0 && (
-                                        <div className="text-sm text-gray-500 mb-2">DIAGNOSTIC ANTI-POLLUTION INCLUS*</div>
-                                    )}
-                                    <div className="font-bold text-xl mt-2">à partir de</div>
-                                    <div className="text-3xl font-bold text-primary">
-                                        {index === 0 ? '104 €' : index === 1 ? '91 €' : index === 2 ? '79,95 €' : '69,95 €'}
-                                    </div>
-                                    <div className="text-xs text-gray-500">Prix variable en fonction du véhicule*</div>
-                                </div>
-                                <button className="mt-4 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors w-full">
-                                    Prendre rendez-vous
-                                </button>
-                            </div>
-                        ))}
-                    </div>
 
-                    {/* Table Body */}
-                    <div className="divide-y">
-                        {[
-                            { name: "Vidange huile moteur", all: true },
-                            { name: "Remplacement du filtre à huile", all: true },
-                            {
-                                name: "Remplacement des filtres à air, habitacle et carburant",
-                                eco: true,
-                                revision: true,
-                                vidange: { price: "39,95 €" },
-                                simple: { price: "39,95 €" }
-                            },
-                            {
-                                name: "Points de contrôle",
-                                eco: "jusqu'à 40 points de contrôle",
-                                revision: "jusqu'à 40 points de contrôle",
-                                vidange: "12 points de contrôles",
-                                simple: "3 points de contrôle"
-                            },
-                            {
-                                name: "Mise à niveau des liquides",
-                                eco: true,
-                                revision: true,
-                                vidange: "AdBlue® en option",
-                                simple: { price: "14,95 €" }
-                            },
-                            { name: "Pression des pneus", all: true },
-                            { name: "Remise à zéro des indicateurs de maintenance", all: true },
-                            { name: "Permutation des roues AV/AR sur les véhicules 4 roues motrices", all: true },
-                            {
-                                name: "Diagnostic électronique moteur (pour véhicules après 2000)",
-                                eco: true,
-                                revision: true,
-                                vidange: { price: "19,95 €" },
-                                simple: { price: "19,95 €" }
-                            }
-                        ].map((row, index) => (
-                            <div key={index} className="grid grid-cols-5 gap-4 px-6 py-3">
-                                <div className="font-medium">{row.name}</div>
-                                {['eco', 'revision', 'vidange', 'simple'].map((col) => (
-                                    <div key={col} className="text-center">
-                                        {row.all ? (
-                                            <Check className="w-5 h-5 text-accent mx-auto" />
-                                        ) : row[col] === true ? (
-                                            <Check className="w-5 h-5 text-accent mx-auto" />
-                                        ) : row[col]?.price ? (
-                                            <div className="text-sm">
-                                  <span className="text-xs px-2 py-1 bg-blue-100 text-blue-800 rounded">
-                                    +{row[col].price}
-                                  </span>
-                                            </div>
-                                        ) : typeof row[col] === 'string' ? (
-                                            <div className="text-sm text-gray-600">{row[col]}</div>
-                                        ) : (
-                                            <Circle className="w-5 h-5 text-gray-300 mx-auto" />
-                                        )}
-                                    </div>
-                                ))}
+                        {/* Table Header */}
+                        <div className="grid grid-cols-5 gap-4 px-6 py-4 border-b">
+                            <div className="bg-blue-50 rounded-lg p-4">
+                                <h3 className="font-medium text-primary mb-2">Pourquoi choisir la révision ÉcoContrôle ?</h3>
+                                <p className="text-sm text-gray-600">
+                                    Anticipez votre prochain contrôle technique en assurant l'encrassement de votre moteur et en identifiant les éléments défaillants pour éviter des réparations coûteuses.
+                                </p>
                             </div>
-                        ))}
+                            {['RÉVISION ECO CONTRÔLE', 'RÉVISION', 'ENTRETIEN VIDANGE', 'VIDANGE SIMPLE'].map((service, index) => (
+                                <div key={index} className="text-center flex flex-col justify-between h-full">
+                                    <div>
+                                        <div className="font-bold text-primary mb-1">{service}</div>
+                                        {index <= 1 && (
+                                            <div className="text-sm text-gray-500 mb-2">GARANTIE CONSTRUCTEUR PRÉSERVÉE*</div>
+                                        )}
+                                        {index === 0 && (
+                                            <div className="text-sm text-gray-500 mb-2">DIAGNOSTIC ANTI-POLLUTION INCLUS*</div>
+                                        )}
+                                        <div className="font-bold text-xl mt-2">à partir de</div>
+                                        <div className="text-3xl font-bold text-primary">
+                                            {index === 0 ? '104 €' : index === 1 ? '91 €' : index === 2 ? '79,95 €' : '69,95 €'}
+                                        </div>
+                                        <div className="text-xs text-gray-500">Prix variable en fonction du véhicule*</div>
+                                    </div>
+                                    <button className="mt-4 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors w-full">
+                                        Prendre rendez-vous
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Table Body */}
+                        <div className="divide-y">
+                            {[
+                                { name: "Vidange huile moteur", all: true },
+                                { name: "Remplacement du filtre à huile", all: true },
+                                {
+                                    name: "Remplacement des filtres à air, habitacle et carburant",
+                                    eco: true,
+                                    revision: true,
+                                    vidange: { price: "39,95 €" },
+                                    simple: { price: "39,95 €" }
+                                },
+                                {
+                                    name: "Points de contrôle",
+                                    eco: "jusqu'à 40 points de contrôle",
+                                    revision: "jusqu'à 40 points de contrôle",
+                                    vidange: "12 points de contrôles",
+                                    simple: "3 points de contrôle"
+                                },
+                                {
+                                    name: "Mise à niveau des liquides",
+                                    eco: true,
+                                    revision: true,
+                                    vidange: "AdBlue® en option",
+                                    simple: { price: "14,95 €" }
+                                },
+                                { name: "Pression des pneus", all: true },
+                                { name: "Remise à zéro des indicateurs de maintenance", all: true },
+                                { name: "Permutation des roues AV/AR sur les véhicules 4 roues motrices", all: true },
+                                {
+                                    name: "Diagnostic électronique moteur (pour véhicules après 2000)",
+                                    eco: true,
+                                    revision: true,
+                                    vidange: { price: "19,95 €" },
+                                    simple: { price: "19,95 €" }
+                                }
+                            ].map((row, index) => (
+                                <div key={index} className="grid grid-cols-5 gap-4 px-6 py-3">
+                                    <div className="font-medium">{row.name}</div>
+                                    {['eco', 'revision', 'vidange', 'simple'].map((col) => (
+                                        <div key={col} className="text-center">
+                                            {row.all ? (
+                                                <Check className="w-5 h-5 text-accent mx-auto" />
+                                            ) : row[col] === true ? (
+                                                <Check className="w-5 h-5 text-accent mx-auto" />
+                                            ) : row[col]?.price ? (
+                                                <div className="text-sm">
+                                                    <span className="text-xs px-2 py-1 bg-blue-100 text-blue-800 rounded">
+                                                        +{row[col].price}
+                                                    </span>
+                                                </div>
+                                            ) : typeof row[col] === 'string' ? (
+                                                <div className="text-sm text-gray-600">{row[col]}</div>
+                                            ) : (
+                                                <Circle className="w-5 h-5 text-gray-300 mx-auto" />
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
