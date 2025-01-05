@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de21eef1-86fb-450d-aea7-08162b318306" name="Changes" comment="" />
+    <list default="true" id="de21eef1-86fb-450d-aea7-08162b318306" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +37,7 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/rayane/WebstormProjects/dookie",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -64,7 +66,7 @@
       <updated>1733214134988</updated>
       <workItem from="1733214135820" duration="826000" />
       <workItem from="1734789238243" duration="7951000" />
-      <workItem from="1736032389753" duration="3296000" />
+      <workItem from="1736032389753" duration="3669000" />
     </task>
     <servers />
   </component>
