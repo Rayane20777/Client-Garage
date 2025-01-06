@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="grid md:grid-cols-3 gap-8">
                     <div>
                         <h4 className="text-xl font-bold mb-4">Contact</h4>
-                        <p className="flex items-center mb-2"><i className="fas fa-phone mr-2"></i> Tél: +212 670 058 094</p>
+                        <p className="flex items-center mb-2"><i className="fas fa-phone mr-2"></i> Tél: +33 670 058 094</p>
                         <p className="flex items-center mb-2"><i className="fas fa-envelope mr-2"></i> Email: garagemaautoservices@outlook.com</p>
                         <a
                             href="https://maps.app.goo.gl/YaQzuqdLMH3mEk6f8"

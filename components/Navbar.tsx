@@ -28,17 +28,19 @@ export default function Navbar() {
               ${isScrolled ? 'shadow-lg' : ''}`}
         >
             <div className="bg-primary text-white text-sm">
-                <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
+                <div
+                    className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">
                     <div className="flex items-center gap-2 hover:text-accent transition-colors">
-                        <Clock className="w-4 h-4" />
+                        <Clock className="w-4 h-4"/>
                         <span className="font-medium">Lun-Sam: 8h30-19h00</span>
                     </div>
-                    <a href="tel:+212670058094" className="flex items-center gap-2 hover:text-accent transition-colors">
-                        <Phone className="w-4 h-4" />
-                        <span className="font-medium">+212 670 05 80 94</span>
+                    <a href="tel:+33670058094" className="flex items-center gap-2 hover:text-accent transition-colors">
+                        <Phone className="w-4 h-4"/>
+                        <span className="font-medium">+33 670 05 80 94</span>
                     </a>
-                    <a href="https://maps.app.goo.gl/YaQzuqdLMH3mEk6f8" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
-                        <MapPin className="w-4 h-4" />
+                    <a href="https://maps.app.goo.gl/YaQzuqdLMH3mEk6f8" target="_blank" rel="noopener noreferrer"
+                       className="flex items-center gap-2 hover:text-accent transition-colors">
+                        <MapPin className="w-4 h-4"/>
                         <span className="font-medium">42 Chemin de Gérocourt, 95650 Boissy-L'Aillerie</span>
                     </a>
                 </div>
@@ -46,7 +48,7 @@ export default function Navbar() {
             <nav className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
                 <div className="logo">
                     <Link href="/" className="block">
-                        <Image
+                    <Image
                             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202024-12-23%20%C3%A0%2020.02.09_d3d420b6.jpg-AwQ4dkNIQetfjBLKJVlf72D03sDGpj.jpeg"
                             alt="M&A Auto Services"
                             width={180}
