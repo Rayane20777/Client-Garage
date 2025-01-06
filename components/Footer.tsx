@@ -29,13 +29,13 @@ export default function Footer() {
                         <h4 className="text-xl font-bold mb-4">Suivez-nous</h4>
                         <div className="flex items-center space-x-2">
                             <a
-                                href="https://www.facebook.com/share/18ZX4XLKHC/?mibextid=wwXIfr"
+                                href="https://www.facebook.com/profile.php?id=61570903426004"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-white flex items-center"
                             >
-                                <Facebook className="w-6 h-6 mr-2" />
-                                <span>M&A Auto Services</span>
+                                <Facebook className="w-6 h-6 mr-2"/>
+                                <span>Garage M&A AutoServices</span>
                             </a>
                         </div>
                     </div>
