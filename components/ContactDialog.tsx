@@ -27,14 +27,14 @@ export default function ContactDialog({ children }: ContactDialogProps) {
                         Email
                     </Button>
                     <Button
-                        onClick={() => window.open('https://wa.me/212670058094', '_blank')}
+                        onClick={() => window.open('https://wa.me/33670058094', '_blank')}
                         className="flex items-center justify-center gap-2"
                     >
                         <MessageCircle className="w-4 h-4" />
                         WhatsApp
                     </Button>
                     <Button
-                        onClick={() => window.location.href = 'tel:+212670058094'}
+                        onClick={() => window.location.href = 'tel:+33670058094'}
                         className="flex items-center justify-center gap-2"
                     >
                         <Phone className="w-4 h-4" />
