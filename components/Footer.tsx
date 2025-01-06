@@ -21,7 +21,7 @@ export default function Footer() {
                     </div>
                     <div>
                         <h4 className="text-xl font-bold mb-4">Horaires</h4>
-                        <p className="flex items-center mb-2"><i className="far fa-clock mr-2"></i> Lun-Ven: 8h30-19h30</p>
+                        <p className="flex items-center mb-2"><i className="far fa-clock mr-2"></i> Lun-Ven: 8h30-19h00</p>
                         <p className="flex items-center mb-2"><i className="far fa-clock mr-2"></i> Sam: 8h30-18h00</p>
                         <p className="flex items-center"><i className="far fa-clock mr-2"></i> Dim: Fermé</p>
                     </div>
