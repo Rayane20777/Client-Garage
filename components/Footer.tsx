@@ -21,21 +21,21 @@ export default function Footer() {
                     </div>
                     <div>
                         <h4 className="text-xl font-bold mb-4">Horaires</h4>
-                        <p className="flex items-center mb-2"><i className="far fa-clock mr-2"></i> Lun-Mer: 8h30-19h00</p>
-                        <p className="flex items-center mb-2"><i className="far fa-clock mr-2"></i> Jeu: 8h30-19h30</p>
-                        <p className="flex items-center mb-2"><i className="far fa-clock mr-2"></i> Ven-Sam: 8h30-19h00</p>
+                        <p className="flex items-center mb-2"><i className="far fa-clock mr-2"></i> Lun-Ven: 8h30-19h00</p>
+                        <p className="flex items-center mb-2"><i className="far fa-clock mr-2"></i> Sam: 8h30-18h00</p>
                         <p className="flex items-center"><i className="far fa-clock mr-2"></i> Dim: Fermé</p>
                     </div>
                     <div>
                         <h4 className="text-xl font-bold mb-4">Suivez-nous</h4>
-                        <div className="flex space-x-4">
+                        <div className="flex items-center space-x-2">
                             <a
                                 href="https://www.facebook.com/share/18ZX4XLKHC/?mibextid=wwXIfr"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-white hover:text-accent transition-colors"
+                                className="text-white flex items-center hover:text-accent transition-colors"
                             >
-                                <Facebook className="w-6 h-6" />
+                                <Facebook className="w-6 h-6 mr-2" />
+                                <span>Garage M&A Auto Services</span>
                             </a>
                         </div>
                     </div>
